@@ -2,6 +2,7 @@
 [[ "$1" == "source" ]] || \
 
 echo 'Dotfiles - "Cowboy" Ben Alman - http://benalman.com/'
+echo 'Fork by Nicolas Jeker'
 
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
 
