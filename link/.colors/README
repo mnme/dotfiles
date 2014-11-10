@@ -1,0 +1,1 @@
+the 'current' symlink points to the currently desired colorscheme, and is loaded by Xresourses at startup
