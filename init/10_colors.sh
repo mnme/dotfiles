@@ -1,3 +1,4 @@
 color=base16-monokai.dark.256.xresources
-e_header "Setting urxvt color to $color"
-"link_do" ".colors/current" ".colors/base16_xresources/$color"
+echo "Setting urxvt color to $color"
+colordir=$(realpath "${HOME}/.colors")
+ln -sv "$colordir/base16-xresources/$color" "$colordir/current" 
