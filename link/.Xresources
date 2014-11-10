@@ -1,0 +1,27 @@
+!  URxvt
+!  #####
+
+URxvt.intensityStyles: false
+URxvt.saveLines : 12000
+URxvt.scrollStyle: rxvt
+URxvt.scrollBar: false
+URxvt.url-launcher: firefox-nightly
+URxvt*borderLess: false
+URxvt.internalBorder: 3
+URxvt.allow_bold: false
+
+URxvt.perl-ext-common: tabbedex,vtwheel,clipboard
+
+!tabbed
+URxvt.tabbed.autohide: true
+
+!clipboard
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.clipboard.autocopy: true
+URxvt.clipboard.copycmd: xsel -ib
+URxvt.clipboard.pastecmd: xsel -ob
+
+!colors
+#include "/home/nicolas/.colors/current"

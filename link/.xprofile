@@ -1,0 +1,13 @@
+xrdb -merge ~/.Xresources
+
+export PATH=$PATH:~/bin
+xset r rate 200 30
+
+xset -b
+
+feh --bg-center ~/.wallpaper
+DISPLAY=:1 feh --bg-center ~/.wallpaper
+unclutter -root &
+compton &
+xautolock -time 10 -locker i3lock-wrapper &
+numlockx &
