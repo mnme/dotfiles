@@ -46,8 +46,11 @@ function is_osx() {
 function is_ubuntu() {
   [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]] || return 1
 }
+function is_arch() {
+  [[ "$(cat /etc/issue 2> /dev/null)" =~ 'Arch Linux' ]] || return 1
+}
 function get_os() {
-  for os in osx ubuntu; do
+  for os in osx ubuntu arch; do
     is_$os; [[ $? == ${1:-0} ]] && echo $os
   done
 }
@@ -267,11 +270,15 @@ if [[ ! "$(type -P gcc)" ]] && is_osx; then
   exit 1
 fi
 
-# If Git is not installed, install it (Ubuntu only, since Git comes standard
+# If Git is not installed, install it (Ubuntu and Arch only, since Git comes standard
 # with recent XCode or CLT)
 if [[ ! "$(type -P git)" ]] && is_ubuntu; then
   e_header "Installing Git"
   sudo apt-get -qq install git-core
+fi
+if [[ ! "$(type -P git)" ]] && is_arch; then
+  e_header "Installing Git"
+  sudo pacman -S --needed git
 fi
 
 # If Git isn't installed by now, something exploded. We gots to quit!
