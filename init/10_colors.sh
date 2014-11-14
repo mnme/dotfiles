@@ -3,7 +3,7 @@ colordir=$(realpath "${HOME}/.colors")
 e_header "Setting urxvt color to $color"
 skip="$("link_test" "$colordir/current" "$colordir/base16-xresources/$color")"
 if [[ "$skip" ]]; then
-  e_error "Skipping ~/$base, $skip."
+  e_error "Skipping ~/.colors/current, $skip."
   return 1;
 fi 
 if [[ -e "$colordir/current" ]] ; then
