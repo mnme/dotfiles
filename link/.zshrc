@@ -111,7 +111,7 @@ setopt NO_clobber
 #setopt nocheckjobs
 
 ## alert me if something failed
-setopt printexitvalue
+#setopt printexitvalue
 
 ## with spelling correction, assume dvorak kb
 #setopt dvorak
