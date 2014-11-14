@@ -1,13 +1,34 @@
 xrdb -merge ~/.Xresources
 
-export PATH=$PATH:~/bin
-xset r rate 200 30
+# Where the magic happens.
+export DOTFILES=~/.dotfiles
+export PATH=$PATH:$DOTFILES/bin
 
+# Source all files in "source"
+function src() {
+    local file
+    if [[ "$1" ]]; then
+        source "$DOTFILES/source/$1.sh"
+    else
+        for file in $DOTFILES/source/*; do
+            source "$file"
+        done
+    fi
+}
+
+src
+
+xset r rate 200 30
 xset -b
 
+# wallpaper on first and second monitor
 feh --bg-center ~/.wallpaper
 DISPLAY=:1 feh --bg-center ~/.wallpaper
+# hide mouse pointer after some time
 unclutter -root &
+# start compositor
 compton &
+# lock after 10 minutes of inactivity
 xautolock -time 10 -locker i3lock-wrapper &
+# enable num lock
 numlockx &
