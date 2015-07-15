@@ -22,4 +22,12 @@ function dotfiles() {
     $DOTFILES/bin/dotfiles "$@" && src
 }
 
-#src
+alias ga='git add'
+alias gai='git add -i'
+alias gc='git commit -v'
+alias gcm='git commit -m'
+alias gco='git checkout'
+alias gd='git diff'
+alias gl='git pull'
+alias gst='git status'
+alias gp='git push'
