@@ -153,3 +153,8 @@ set wildmode=list:longest,full
 							" List all options and complete
 set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules
 							" Ignore certain files in tab-completion
+
+" Section: Shortcuts {{{1
+"--------------------------------------------------------------------------
+nnoremap <leader>b :CtrlPBuffer<CR>
+noremap <Leader>W :w !sudo tee % > /dev/null
