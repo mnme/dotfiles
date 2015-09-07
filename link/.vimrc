@@ -49,6 +49,7 @@ let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
 
 " supertab
+let g:SuperTabSetDefaultCompletionType = "context"
 let g:SuperTabLongestEnhanced=1
 let g:SuperTabLongestHighlight=1
 
@@ -158,3 +159,24 @@ set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules
 "--------------------------------------------------------------------------
 nnoremap <leader>b :CtrlPBuffer<CR>
 noremap <Leader>W :w !sudo tee % > /dev/null
+
+let mapleader = "\<Space>"
+
+" Open and save
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>b :CtrlPBuffer<CR>
+" System clipboard access
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+" Jump to end of line when yanking or pasting
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+" This fixes the annoying window when accidentally hitting q:
+map q: :q
