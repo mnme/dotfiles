@@ -12,6 +12,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-eunuch'
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'ervandew/supertab'
 Plugin 'airblade/vim-gitgutter'
@@ -21,6 +22,8 @@ Plugin 'mileszs/ack.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'wting/rust.vim'
+Plugin 'lervag/vimtex'
+Plugin 'rhysd/clever-f.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -60,6 +63,13 @@ endif
 " vim-markdown
 let g:vim_markdown_math=1
 
+" vimtex
+let g:tex_flavor = "latex"
+let g:latex_latexmk_output = 'pdf'
+let g:vimtex_complete_close_braces = 1
+let g:vimtex_view_general_viewer = 'SumatraPDF'
+let g:vimtex_view_general_options = '-forward-search @tex @line @pdf'
+let g:vimtex_view_general_options_latexmk = ''
 
 " Section: Look {{{1
 "-------------------------------------------------------------------------
