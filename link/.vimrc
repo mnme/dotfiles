@@ -10,12 +10,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'ervandew/supertab'
-"Plugin 'OmniCppComplete'
+Plugin 'Valloric/YouCompleteMe'
+"Plugin 'ervandew/supertab'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
@@ -49,9 +47,10 @@ let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
 
 " supertab
-let g:SuperTabSetDefaultCompletionType = "context"
-let g:SuperTabLongestEnhanced=1
-let g:SuperTabLongestHighlight=1
+"let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+"let g:SuperTabLongestEnhanced=1
+"let g:SuperTabLongestHighlight=1
 
 " ack.vim
 if executable('ag')
@@ -61,15 +60,6 @@ endif
 " vim-markdown
 let g:vim_markdown_math=1
 
-" OmniCppComplete
-"let OmniCpp_NamespaceSearch = 1
-"let OmniCpp_GlobalScopeSearch = 1
-"let OmniCpp_ShowAccess = 1
-"let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-"let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-"let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-"let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-"let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 
 " Section: Look {{{1
 "-------------------------------------------------------------------------
