@@ -143,20 +143,20 @@ set wildmenu                " Show possible completions on command line
 set wildmode=list:longest,full
 							" List all options and complete
 set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules
-							" Ignore certain files in tab-completion
-
-" Section: Shortcuts {{{1
+                            " Ignore certain files in tab-completion
+" Section: Key mappings {{{1
 "--------------------------------------------------------------------------
-nnoremap <leader>b :CtrlPBuffer<CR>
-noremap <Leader>W :w !sudo tee % > /dev/null
 
 let mapleader = "\<Space>"
+let maplocalleader = "\<Space>"
 
-" Open and save
+" Open, save and close
 nnoremap <Leader>o :CtrlP<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>w :w<CR>
+noremap <Leader>W :w !sudo tee % > /dev/null
+nnoremap <Leader>c :bd<CR>
 nnoremap <Leader>q :q<CR>
-nnoremap <Leader>b :CtrlPBuffer<CR>
 " System clipboard access
 vmap <Leader>y "+y
 vmap <Leader>d "+d
@@ -164,9 +164,32 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+" Better comand-line editing
+cnoremap <C-j> <t_kd>
+cnoremap <C-k> <t_ku>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
+nnoremap <Leader>m :make<CR>
+nnoremap <Leader>mc :make clean<CR>
+nnoremap <Leader>mr :make run<CR>
+
 " Jump to end of line when yanking or pasting
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
+" Make Y behave like other capitals
+nnoremap Y y$
 " This fixes the annoying window when accidentally hitting q:
 map q: :q
+" Clear search highlights
+noremap <silent><Leader>/ :nohl<CR>
+
+" use j and k in wrapped lines
+nnoremap j gj
+nnoremap k gk
+" split moving for the lazy
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
