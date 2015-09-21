@@ -29,19 +29,13 @@ call vundle#end()
 filetype plugin indent on
 
 " Airline
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_powerline_fonts=1
-
-" Syntastic
-"let g:syntastic_enable_signs=1
-"let g:syntastic_auto_jump=0
-"let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-"let g:syntastic_cpp_include_dirs = ['/usr/include/qt/QtCore', '/usr/include/qt/QtNetwork']
-"let g:syntastic_error_symbol = "✗"
-"let g:syntastic_warning_symbol = "⚠"
+if &encoding == 'utf-8'
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
+    let g:airline_powerline_fonts=1
+endif
 
 " GitGutter
 let g:gitgutter_sign_added = '∙'
@@ -117,8 +111,12 @@ set incsearch               " Search as you type
 set infercase               " Completion recognizes capitalization
 set laststatus=2            " Always show the status bar
 set linebreak               " Break long lines by word, not char
-"set listchars=tab:▶\ ,trail:◀,extends:»,precedes:«
-set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set list
+if &encoding == 'utf-8'
+    set listchars=tab:▶\ ,trail:⋅,extends:❯,precedes:❮,nbsp:·
+else
+    set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
 set matchtime=2             " Tenths of second to hilight matching paren
 set modelines=5             " How many lines of head & tail to look for ml's
 silent! set mouse=nvc       " Use the mouse, but not in insert mode
