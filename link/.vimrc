@@ -70,7 +70,7 @@ let g:vimtex_view_general_options_latexmk = ''
 
 syntax enable
 set background=light
-colorscheme solarized
+silent! colorscheme solarized
 
 " Section: Vim options {{{1
 "--------------------------------------------------------------------------
@@ -90,12 +90,12 @@ set directory-=.            " Don't store temp files in cwd
 set encoding=utf8           " UTF-8 by default
 set expandtab               " No tabs
 set fileformats=unix,dos,mac
-							" Prefer Unix
-set fillchars=vert:\ ,stl:\ ,stlnc:\ ,fold:-,diff:┄
-                            " Unicode chars for diffs/folds, and rely on
+                            " Prefer Unix
+set fillchars=vert:\ ,stl:\ ,stlnc:\ ,fold:\ ,diff:┄
+                            " Unicode chars for diffs, and rely on
                             " Colors for window borders
 silent! set foldmethod=marker
-							" Use braces by default
+                            " Use braces by default
 set formatoptions=jtcqn1    " t - autowrap normal text
                             " j - delete comment character when joining commented lines
                             " c - autowrap comments
@@ -127,7 +127,7 @@ set nowritebackup           " No backups made while editing
 set nrformats-=octal
 set visualbell t_vb=        " No flashing or beeping at all
 set printoptions=paper:A4
-							" DIN paper
+                            " DIN paper
 set ruler                   " Show row/col and percentage
 set scroll=4                " Number of lines to scroll with ^U/^D
 set scrolloff=15            " Keep cursor away from this many chars top/bot
@@ -149,7 +149,7 @@ set tabstop=4               " The One True Tab
 set notitle                 " Don't set the title of the Vim window
 set wildmenu                " Show possible completions on command line
 set wildmode=list:longest,full
-							" List all options and complete
+                            " List all options and complete
 set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules
                             " Ignore certain files in tab-completion
 " Section: Key mappings {{{1
