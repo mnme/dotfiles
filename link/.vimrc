@@ -24,6 +24,8 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'wting/rust.vim'
 Plugin 'lervag/vimtex'
 Plugin 'rhysd/clever-f.vim'
+Plugin 'johnsyweb/vim-makeshift'
+Plugin 'qpkorr/vim-bufkill'
 
 call vundle#end()
 filetype plugin indent on
@@ -163,7 +165,8 @@ nnoremap <Leader>o :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>w :w<CR>
 noremap <Leader>W :w !sudo tee % > /dev/null
-nnoremap <Leader>c :bd<CR>
+nnoremap <Leader>c :BD<CR>
+nnoremap <Leader>l :lcd %:p:h<CR>
 nnoremap <Leader>q :q<CR>
 " System clipboard access
 vmap <Leader>y "+y
