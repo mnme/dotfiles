@@ -150,7 +150,7 @@ set notitle                 " Don't set the title of the Vim window
 set wildmenu                " Show possible completions on command line
 set wildmode=list:longest,full
                             " List all options and complete
-set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules
+set wildignore=*.class,*.o,*.d,*~,*.pyc,.git,node_modules
                             " Ignore certain files in tab-completion
 " Section: Key mappings {{{1
 "--------------------------------------------------------------------------
