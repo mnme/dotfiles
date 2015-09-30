@@ -8,11 +8,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-vinegar'
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'ervandew/supertab'
 Plugin 'airblade/vim-gitgutter'
