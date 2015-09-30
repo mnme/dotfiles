@@ -143,6 +143,8 @@ set printoptions=paper:A4   " DIN paper
 set ruler                   " Show row/col and percentage
 set scroll=4                " Number of lines to scroll with ^U/^D
 set scrolloff=15            " Keep cursor away from this many chars top/bot
+set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
+                            " Sessions don't contain options
 set shiftround              " Shift to certain columns, not just n spaces
 set shiftwidth=4            " Number of spaces to shift for autoindent or >,<
 set shortmess+=A            " Don't bother me when a swapfile exists
