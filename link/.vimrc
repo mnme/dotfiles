@@ -14,12 +14,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-vinegar'
 Plugin 'Valloric/YouCompleteMe'
-"Plugin 'ervandew/supertab'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'mileszs/ack.vim'
-Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'wting/rust.vim'
 Plugin 'lervag/vimtex'
@@ -121,7 +119,7 @@ set formatoptions=jtcqn1    " t - autowrap normal text
                             " 2 - use indenting from 2nd line of para
 set hidden                  " Don't prompt to save hidden windows until exit
 set history=200             " How many lines of history to save
-set hlsearch                " Hilight searching
+set hlsearch                " Highlight searching
 set ignorecase              " Case insensitive
 set incsearch               " Search as you type
 set laststatus=2            " Always show the status bar
@@ -141,8 +139,7 @@ set relativenumber          " Relative numbers for hybrid mode
 set nowritebackup           " No backups made while editing
 set nrformats-=octal
 set visualbell t_vb=        " No flashing or beeping at all
-set printoptions=paper:A4
-                            " DIN paper
+set printoptions=paper:A4   " DIN paper
 set ruler                   " Show row/col and percentage
 set scroll=4                " Number of lines to scroll with ^U/^D
 set scrolloff=15            " Keep cursor away from this many chars top/bot
@@ -183,13 +180,6 @@ nnoremap <Leader>fc :BD<CR>
 nnoremap <Leader>wc :wincmd c<CR>
 nnoremap <Leader>l :lcd %:p:h<CR>
 nnoremap <Leader>q :q<CR>
-" System clipboard access
-"vmap <Leader>y "+y
-"vmap <Leader>d "+d
-"nmap <Leader>p "+p
-"nmap <Leader>P "+P
-"vmap <Leader>p "+p
-"vmap <Leader>P "+P
 " Better comand-line editing
 cnoremap <C-j> <t_kd>
 cnoremap <C-k> <t_ku>
