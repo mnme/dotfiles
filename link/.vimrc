@@ -26,6 +26,11 @@ Plugin 'lervag/vimtex'
 Plugin 'rhysd/clever-f.vim'
 Plugin 'johnsyweb/vim-makeshift'
 Plugin 'qpkorr/vim-bufkill'
+Plugin 'LucHermitte/lh-vim-lib' "dependency of local_vimrc
+Plugin 'LucHermitte/local_vimrc'
+Plugin 'xolox/vim-misc' "dependency of easytags
+Plugin 'xolox/vim-easytags'
+Plugin 'bkad/CamelCaseMotion'
 
 call vundle#end()
 filetype plugin indent on
@@ -66,6 +71,11 @@ let g:vimtex_complete_close_braces = 1
 let g:vimtex_view_general_viewer = 'SumatraPDF'
 let g:vimtex_view_general_options = '-forward-search @tex @line @pdf'
 let g:vimtex_view_general_options_latexmk = ''
+" easytags
+let g:easytags_async = 1
+let g:easytags_events = ['BufWritePost']
+                            " Interesting events: WinEnter, TabEnter,
+                            " InsertLeave, SessionLoadPost
 
 " Section: Look {{{1
 "-------------------------------------------------------------------------
