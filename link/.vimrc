@@ -95,9 +95,13 @@ set backspace=indent,eol,start
 set cindent                 " Automatic program indenting
 set cinkeys-=0#             " Comments don't fiddle with indenting
 set cino=(0                 " Indent newlines after opening parenthesis
+set clipboard=unnamed,unnamedplus
+                            " Use system clipboard as default
 set commentstring=\ \ #%s   " When folds are created, add them to this
+set complete-=i             " Scanning for includes can be painfully slow
 set completeopt=menuone,menu,longest,preview
 set copyindent              " Make autoindent use the same chars as prev line
+set cpoptions+=d
 set directory-=.            " Don't store temp files in cwd
 set encoding=utf8           " UTF-8 by default
 set expandtab               " No tabs
@@ -120,7 +124,6 @@ set history=200             " How many lines of history to save
 set hlsearch                " Hilight searching
 set ignorecase              " Case insensitive
 set incsearch               " Search as you type
-set infercase               " Completion recognizes capitalization
 set laststatus=2            " Always show the status bar
 set linebreak               " Break long lines by word, not char
 set list
@@ -173,18 +176,20 @@ let maplocalleader = "\<Space>"
 " Open, save and close
 nnoremap <Leader>o :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>. :CtrlPTag<CR>
 nnoremap <Leader>w :w<CR>
 noremap <Leader>W :w !sudo tee % > /dev/null
-nnoremap <Leader>c :BD<CR>
+nnoremap <Leader>fc :BD<CR>
+nnoremap <Leader>wc :wincmd c<CR>
 nnoremap <Leader>l :lcd %:p:h<CR>
 nnoremap <Leader>q :q<CR>
 " System clipboard access
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
+"vmap <Leader>y "+y
+"vmap <Leader>d "+d
+"nmap <Leader>p "+p
+"nmap <Leader>P "+P
+"vmap <Leader>p "+p
+"vmap <Leader>P "+P
 " Better comand-line editing
 cnoremap <C-j> <t_kd>
 cnoremap <C-k> <t_ku>
@@ -192,6 +197,7 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
 nnoremap <Leader>m :make<CR>
+nnoremap <Leader>mj :make -j12<CR>
 nnoremap <Leader>mc :make clean<CR>
 nnoremap <Leader>mr :make run<CR>
 
@@ -203,14 +209,29 @@ nnoremap <silent> p p`]
 nnoremap Y y$
 " This fixes the annoying window when accidentally hitting q:
 map q: :q
-" Clear search highlights
+" Search and replace tricks
+nnoremap <silent> <Leader>u :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 noremap <silent><Leader>/ :nohl<CR>
 
 " use j and k in wrapped lines
 nnoremap j gj
 nnoremap k gk
-" split moving for the lazy
+" split moving for the lazy with ctrl hjkl
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+" split resizing with alt hjkl
+" http://stackoverflow.com/questions/16599867/vim-can-i-have-the-last-key-of-a-multi-key-binding-repeat-the-command
+if has('unix')
+    nnoremap j 5<C-w>-
+    nnoremap k 5<C-w>+
+    nnoremap h 5<C-w><
+    nnoremap l 5<C-w>>
+else
+    nnoremap <M-j> 5<C-w>-
+    nnoremap <M-k> 5<C-w>+
+    nnoremap <M-h> 5<C-w><
+    nnoremap <M-l> 5<C-w>>
+endif
+
