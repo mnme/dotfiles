@@ -2,6 +2,9 @@
 /caches/
 /backups/
 
+# vim plugins
+/link/.vim/plugged/
+
 # Top secret stuff!
 /link/.ssh/authorized_keys
 /link/.ssh/id_*
