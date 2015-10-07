@@ -1,37 +1,39 @@
 " Section: Plugin settings {{{1
 "--------------------------------------------------------------------------
 
-set nocompatible
-filetype off
+function! BuildYCM(info)
+  " info is a dictionary with 3 fields
+  " - name:   name of the plugin
+  " - status: 'installed', 'updated', or 'unchanged'
+  " - force:  set on PlugInstall! or PlugUpdate!
+  if a:info.status == 'installed' || a:info.force
+    !./install.py
+  endif
+endfunction
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-vinegar'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-airline'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'mileszs/ack.vim'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'wting/rust.vim'
-Plugin 'lervag/vimtex'
-Plugin 'rhysd/clever-f.vim'
-Plugin 'johnsyweb/vim-makeshift'
-Plugin 'qpkorr/vim-bufkill'
-Plugin 'LucHermitte/lh-vim-lib' "dependency of local_vimrc
-Plugin 'LucHermitte/local_vimrc'
-Plugin 'xolox/vim-misc' "dependency of easytags
-Plugin 'xolox/vim-easytags'
-Plugin 'bkad/CamelCaseMotion'
-
-call vundle#end()
-filetype plugin indent on
+call plug#begin()
+Plug 'scrooloose/nerdcommenter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-vinegar'
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'airblade/vim-gitgutter'
+Plug 'bling/vim-airline'
+Plug 'altercation/vim-colors-solarized'
+Plug 'mileszs/ack.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'wting/rust.vim'
+Plug 'lervag/vimtex'
+Plug 'rhysd/clever-f.vim'
+Plug 'johnsyweb/vim-makeshift'
+Plug 'qpkorr/vim-bufkill'
+Plug 'LucHermitte/lh-vim-lib' "dependency of local_vimrc
+Plug 'LucHermitte/local_vimrc'
+Plug 'xolox/vim-misc' "dependency of easytags
+Plug 'xolox/vim-easytags', { 'on': 'UpdateTags' }
+Plug 'bkad/CamelCaseMotion'
+call plug#end()
 
 " Airline
 if &encoding == 'utf-8'
