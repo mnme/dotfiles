@@ -181,6 +181,7 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>. :CtrlPTag<CR>
 nnoremap <Leader>w :w<CR>
 noremap <Leader>W :w !sudo tee % > /dev/null
+nnoremap <Leader>c :bd<CR>
 nnoremap <Leader>fc :BD<CR>
 nnoremap <Leader>wc :wincmd c<CR>
 nnoremap <Leader>l :lcd %:p:h<CR>
@@ -208,9 +209,12 @@ map q: :q
 nnoremap <silent> <Leader>u :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 noremap <silent><Leader>/ :nohl<CR>
 
-" use j and k in wrapped lines
-nnoremap j gj
-nnoremap k gk
+" use j and k in wrapped lines, don't use with counts
+function! LineMotion(dir)
+    execute "normal! " . (v:count1 > 1 ? "m'" . v:count1 : "g") . a:dir
+endfunction
+nnoremap <silent> j :<c-u>call LineMotion("j")<cr>
+nnoremap <silent> k :<c-u>call LineMotion("k")<cr>
 " split moving for the lazy with ctrl hjkl
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
