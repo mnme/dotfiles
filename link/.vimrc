@@ -150,20 +150,20 @@ set scrolloff=15                " Keep cursor away from this many chars top/bot
 set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
                                 " Sessions don't contain options
 set shiftround                  " Shift to certain columns, not just n spaces
-set shiftwidth=4                " Number of spaces to shift for autoindent or >,<
+set shiftwidth=8                " Number of spaces to shift for autoindent or >,<
 set shortmess+=A                " Don't bother me when a swapfile exists
 set showbreak=                  " Show for lines that have been wrapped, like Emacs
 set showmatch                   " Hilight matching braces/parens/etc.
 set sidescrolloff=3             " Keep cursor away from this many chars left/right
 set smartcase                   " Lets you search for ALL CAPS
-set softtabstop=4               " Spaces 'feel' like tabs
+set softtabstop=8               " Spaces 'feel' like tabs
 set suffixes+=.pyc              " Ignore these files when tab-completing
 
 set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/qt
 set tags+=~/.vim/tags/qt4
 
-set tabstop=4                   " The One True Tab
+set tabstop=8                   " Linux kernel style
 set notitle                     " Don't set the title of the Vim window
 set wildmenu                    " Show possible completions on command line
 set wildmode=list:longest,full
