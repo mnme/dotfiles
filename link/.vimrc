@@ -33,6 +33,7 @@ Plug 'LucHermitte/local_vimrc'
 Plug 'xolox/vim-misc' "dependency of easytags
 Plug 'xolox/vim-easytags', { 'on': 'UpdateTags' }
 Plug 'bkad/CamelCaseMotion'
+Plug 'mkitt/tabline.vim'
 call plug#end()
 
 " Airline
