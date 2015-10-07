@@ -98,6 +98,7 @@ set cinkeys-=0#                 " Comments don't fiddle with indenting
 set cino=(0                     " Indent newlines after opening parenthesis
 set clipboard=unnamed,unnamedplus
                                 " Use system clipboard as default
+set colorcolumn=80              " highlight column 80
 set commentstring=\ \ #%s       " When folds are created, add them to this
 set complete-=i                 " Scanning for includes can be painfully slow
 set completeopt=menuone,menu,longest,preview
