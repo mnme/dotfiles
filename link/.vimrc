@@ -36,6 +36,9 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'mkitt/tabline.vim'
 call plug#end()
 
+" CtrlP
+let g:ctrlp_working_path_mode = 0
+
 " Airline
 if &encoding == 'utf-8'
     let g:airline_left_sep = ''
