@@ -17,14 +17,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-vinegar'
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-Plug 'airblade/vim-gitgutter'
-Plug 'bling/vim-airline'
-Plug 'altercation/vim-colors-solarized'
 Plug 'mileszs/ack.vim'
-Plug 'plasticboy/vim-markdown'
-Plug 'wting/rust.vim'
-Plug 'lervag/vimtex'
 Plug 'rhysd/clever-f.vim'
 Plug 'johnsyweb/vim-makeshift'
 Plug 'qpkorr/vim-bufkill'
@@ -33,7 +26,21 @@ Plug 'LucHermitte/local_vimrc'
 Plug 'xolox/vim-misc' "dependency of easytags
 Plug 'xolox/vim-easytags', { 'on': 'UpdateTags' }
 Plug 'bkad/CamelCaseMotion'
+Plug 'Chiel92/vim-autoformat'
 Plug 'mkitt/tabline.vim'
+" look
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'altercation/vim-colors-solarized'
+" completion
+"Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'ervandew/supertab'
+" syntax
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'wting/rust.vim'
+Plug 'lervag/vimtex'
 call plug#end()
 
 " CtrlP
