@@ -245,3 +245,14 @@ else
     nnoremap <M-l> 5<C-w>>
 endif
 
+" Section: Indendation{{{1
+"--------------------------------------------------------------------------
+
+" 4 spaces
+autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+autocmd FileType php setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+" 2 spaces
+autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType sass setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+
