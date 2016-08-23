@@ -97,6 +97,9 @@ let g:easytags_events = ['BufWritePost']
                             " Interesting events: WinEnter, TabEnter,
                             " InsertLeave, SessionLoadPost
 
+" CamelCaseMotion
+call camelcasemotion#CreateMotionMappings(',')
+
 " Section: Look {{{1
 "-------------------------------------------------------------------------
 
