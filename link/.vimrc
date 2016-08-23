@@ -81,9 +81,16 @@ let g:vim_markdown_math=1
 let g:tex_flavor = "latex"
 let g:latex_latexmk_output = 'pdf'
 let g:vimtex_complete_close_braces = 1
-let g:vimtex_view_general_viewer = 'SumatraPDF'
-let g:vimtex_view_general_options = '-forward-search @tex @line @pdf'
-let g:vimtex_view_general_options_latexmk = ''
+if has("win32")
+        let g:vimtex_view_general_viewer = 'SumatraPDF'
+        let g:vimtex_view_general_options = '-forward-search @tex @line @pdf'
+        let g:vimtex_view_general_options_latexmk = ''
+else
+        let g:vimtex_view_general_viewer = 'qpdfview'
+        let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
+        let g:vimtex_view_general_options_latexmk = '--unique'
+endif
+
 " easytags
 let g:easytags_async = 1
 let g:easytags_events = ['BufWritePost']
