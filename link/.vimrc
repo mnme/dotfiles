@@ -68,7 +68,9 @@ let g:gitgutter_sign_modified_removed = '∙'
 "let g:SuperTabLongestHighlight=1
 
 " ack.vim
-if executable('ag')
+if executable('pt')
+    let g:ackprg = 'pt --nogroup --nocolor --column'
+elseif executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
 
