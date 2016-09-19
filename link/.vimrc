@@ -41,6 +41,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'wting/rust.vim'
 Plug 'lervag/vimtex'
+Plug 'hail2u/vim-css3-syntax'
 call plug#end()
 
 " CtrlP
@@ -267,4 +268,5 @@ autocmd FileType php setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 " 2 spaces
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 autocmd FileType sass setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
