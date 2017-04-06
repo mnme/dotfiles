@@ -51,6 +51,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'wting/rust.vim'
 Plug 'lervag/vimtex'
 Plug 'hail2u/vim-css3-syntax'
+Plug 'jwalton512/vim-blade'
+Plug 'lumiliet/vim-twig'
 call plug#end()
 
 " Airline
