@@ -1,26 +1,26 @@
-if [[ "$(type -p hub)" ]]; then
-    alias git=hub
-fi
-
 # Where the magic happens.
-#export DOTFILES=~/.dotfiles
+export DOTFILES=~/.dotfiles
 
 # Source all files in "source"
-#function src() {
-#    local file
-#    if [[ "$1" ]]; then
-#source "$DOTFILES/source/$1.sh"
-#    else
-#        for file in $DOTFILES/source/*; do
-#            source "$file"
-#        done
-#    fi
-#}
+function src() {
+    local file
+    if [[ "$1" ]]; then
+        source "$DOTFILES/source/$1.sh"
+    else
+        for file in $DOTFILES/source/*; do
+            source "$file"
+        done
+    fi
+}
 
 # Run dotfiles script, then source.
 function dotfiles() {
     $DOTFILES/bin/dotfiles "$@" && src
 }
+
+if [[ "$(type -p hub)" ]]; then
+    alias git=hub
+fi
 
 # Use a default width of 80 for manpages for more convenient reading
 export MANWIDTH=${MANWIDTH:-80}
