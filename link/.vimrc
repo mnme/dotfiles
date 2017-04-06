@@ -7,7 +7,7 @@ function! BuildYCM(info)
   " - status: 'installed', 'updated', or 'unchanged'
   " - force:  set on PlugInstall! or PlugUpdate!
   if a:info.status == 'installed' || a:info.force
-    !./install.py
+    !./install.py --clang-completer
   endif
 endfunction
 
@@ -39,8 +39,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 " completion
-"Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-Plug 'ervandew/supertab'
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 " syntax
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'plasticboy/vim-markdown'
@@ -63,12 +63,6 @@ let g:gitgutter_sign_added = '∙'
 let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
-
-" supertab
-"let g:SuperTabDefaultCompletionType = "context"
-"let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
-"let g:SuperTabLongestEnhanced=1
-"let g:SuperTabLongestHighlight=1
 
 " vim-markdown
 let g:vim_markdown_math=1
