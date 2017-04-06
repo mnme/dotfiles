@@ -33,6 +33,7 @@ Plug 'xolox/vim-easytags', { 'on': 'UpdateTags' }
 Plug 'bkad/CamelCaseMotion'
 Plug 'Chiel92/vim-autoformat'
 Plug 'mkitt/tabline.vim'
+Plug 'tpope/vim-abolish'
 " look
 Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
