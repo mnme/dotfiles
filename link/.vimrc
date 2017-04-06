@@ -43,6 +43,8 @@ Plug 'altercation/vim-colors-solarized'
 " completion
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+" linting
+Plug 'w0rp/ale'
 " syntax
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'plasticboy/vim-markdown'
@@ -85,6 +87,13 @@ let g:easytags_events = ['BufWritePost']
 
 " CamelCaseMotion
 call camelcasemotion#CreateMotionMappings(',')
+
+" Ale
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_linters = {'html': [],'c': ['clang'], 'cpp': ['clang']}
+let g:ale_c_clang_options = '-I. -Iinclude -std=c11 -Wall -x c'
+let g:ale_cpp_clang_options = '-I. -Iinclude -std=c++14 -Wall -x c++'
 
 " Section: Look {{{1
 "-------------------------------------------------------------------------
