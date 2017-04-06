@@ -34,6 +34,7 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'Chiel92/vim-autoformat'
 Plug 'mkitt/tabline.vim'
 Plug 'tpope/vim-abolish'
+Plug 'editorconfig/editorconfig-vim'
 " look
 Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
@@ -157,20 +158,20 @@ set scrolloff=15                " Keep cursor away from this many chars top/bot
 set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
                                 " Sessions don't contain options
 set shiftround                  " Shift to certain columns, not just n spaces
-set shiftwidth=8                " Number of spaces to shift for autoindent or >,<
+set shiftwidth=4                " Number of spaces to shift for autoindent or >,<
 set shortmess+=A                " Don't bother me when a swapfile exists
 set showbreak=                  " Show for lines that have been wrapped, like Emacs
 set showmatch                   " Hilight matching braces/parens/etc.
 set sidescrolloff=3             " Keep cursor away from this many chars left/right
 set smartcase                   " Lets you search for ALL CAPS
-set softtabstop=8               " Spaces 'feel' like tabs
+set softtabstop=4               " Spaces 'feel' like tabs
 set suffixes+=.pyc              " Ignore these files when tab-completing
 
 set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/qt
 set tags+=~/.vim/tags/qt4
 
-set tabstop=8                   " Linux kernel style
+set tabstop=4
 set notitle                     " Don't set the title of the Vim window
 set wildmenu                    " Show possible completions on command line
 set wildmode=list:longest,full
@@ -230,25 +231,24 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " split resizing with alt hjkl
 " http://stackoverflow.com/questions/16599867/vim-can-i-have-the-last-key-of-a-multi-key-binding-repeat-the-command
-if has('unix')
-    nnoremap j 5<C-w>-
-    nnoremap k 5<C-w>+
-    nnoremap h 5<C-w><
-    nnoremap l 5<C-w>>
-else
-    nnoremap <M-j> 5<C-w>-
-    nnoremap <M-k> 5<C-w>+
-    nnoremap <M-h> 5<C-w><
-    nnoremap <M-l> 5<C-w>>
-endif
+"if has('unix')
+    "nnoremap j 5<C-w>-
+    "nnoremap k 5<C-w>+
+    "nnoremap h 5<C-w><
+    "nnoremap l 5<C-w>>
+"else
+    "nnoremap <M-j> 5<C-w>-
+    "nnoremap <M-k> 5<C-w>+
+    "nnoremap <M-h> 5<C-w><
+    "nnoremap <M-l> 5<C-w>>
+"endif
 
 " Section: Indendation{{{1
 "--------------------------------------------------------------------------
 
-" 4 spaces
-autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
-autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
-autocmd FileType php setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+" 8 spaces
+autocmd FileType c setlocal shiftwidth=8 tabstop=8 softtabstop=8 expandtab
+autocmd FileType cpp setlocal shiftwidth=8 tabstop=8 softtabstop=8 expandtab
 " 2 spaces
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 autocmd FileType sass setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
