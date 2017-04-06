@@ -34,7 +34,7 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'Chiel92/vim-autoformat'
 Plug 'mkitt/tabline.vim'
 " look
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
@@ -57,12 +57,6 @@ if &encoding == 'utf-8'
     let g:airline_right_alt_sep = ''
     let g:airline_powerline_fonts=1
 endif
-
-" GitGutter
-let g:gitgutter_sign_added = '∙'
-let g:gitgutter_sign_modified = '∙'
-let g:gitgutter_sign_removed = '∙'
-let g:gitgutter_sign_modified_removed = '∙'
 
 " vim-markdown
 let g:vim_markdown_math=1
