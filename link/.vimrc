@@ -13,11 +13,16 @@ endfunction
 
 call plug#begin()
 Plug 'scrooloose/nerdcommenter'
-Plug 'ctrlpvim/ctrlp.vim'
+" Check if fzf is already installed via homebrew
+if filereadable('/usr/local/opt/fzf/install')
+        Plug '/usr/local/opt/fzf'
+else
+        Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+endif
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-vinegar'
-Plug 'mileszs/ack.vim'
 Plug 'rhysd/clever-f.vim'
 Plug 'johnsyweb/vim-makeshift'
 Plug 'qpkorr/vim-bufkill'
@@ -44,9 +49,6 @@ Plug 'lervag/vimtex'
 Plug 'hail2u/vim-css3-syntax'
 call plug#end()
 
-" CtrlP
-let g:ctrlp_working_path_mode = 0
-
 " Airline
 if &encoding == 'utf-8'
     let g:airline_left_sep = ''
@@ -67,13 +69,6 @@ let g:gitgutter_sign_modified_removed = '∙'
 "let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
 "let g:SuperTabLongestEnhanced=1
 "let g:SuperTabLongestHighlight=1
-
-" ack.vim
-if executable('pt')
-    let g:ackprg = 'pt --nogroup --nocolor --column'
-elseif executable('ag')
-    let g:ackprg = 'ag --vimgrep'
-endif
 
 " vim-markdown
 let g:vim_markdown_math=1
@@ -200,9 +195,9 @@ let mapleader = "\<Space>"
 let maplocalleader = "\<Space>"
 
 " Open, save and close
-nnoremap <Leader>o :CtrlP<CR>
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>. :CtrlPTag<CR>
+nnoremap <Leader>o :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>. :Tags<CR>
 nnoremap <Leader>w :w<CR>
 noremap <Leader>W :w !sudo tee % > /dev/null
 nnoremap <Leader>c :bd<CR>
