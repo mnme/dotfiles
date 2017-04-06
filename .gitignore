@@ -4,6 +4,7 @@
 
 # vim plugins
 /link/.vim/plugged/
+/link/.vim/.netrwhist
 
 # Top secret stuff!
 /link/.ssh/authorized_keys
