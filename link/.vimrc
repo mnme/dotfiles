@@ -48,7 +48,7 @@ Plug 'w0rp/ale'
 " syntax
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'plasticboy/vim-markdown'
-Plug 'wting/rust.vim'
+Plug 'rust-lang/rust.vim'
 Plug 'lervag/vimtex'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'jwalton512/vim-blade'
