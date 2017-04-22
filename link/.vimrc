@@ -54,6 +54,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'jwalton512/vim-blade'
 Plug 'lumiliet/vim-twig'
 Plug 'artoj/qmake-syntax-vim'
+Plug 'chr4/nginx.vim'
 call plug#end()
 
 " Airline
