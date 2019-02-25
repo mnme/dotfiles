@@ -123,6 +123,8 @@ call camelcasemotion#CreateMotionMappings(',')
 syntax enable
 set background=light
 silent! colorscheme solarized
+" Make matching parenthesis and cursor distinguishable
+hi MatchParen ctermbg=7
 
 " Section: Vim options {{{1
 "--------------------------------------------------------------------------
