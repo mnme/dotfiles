@@ -20,7 +20,6 @@ else
 endif
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'rhysd/clever-f.vim'
 Plug 'tpope/vim-commentary'
 Plug 'johnsyweb/vim-makeshift'
 Plug 'qpkorr/vim-bufkill'
