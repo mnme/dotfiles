@@ -12,7 +12,6 @@ function! BuildYCM(info)
 endfunction
 
 call plug#begin()
-Plug 'scrooloose/nerdcommenter'
 " Check if fzf is already installed via homebrew
 if filereadable('/usr/local/opt/fzf/install')
         Plug '/usr/local/opt/fzf'
@@ -23,6 +22,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-commentary'
 Plug 'rhysd/clever-f.vim'
 Plug 'johnsyweb/vim-makeshift'
 Plug 'qpkorr/vim-bufkill'
