@@ -18,16 +18,11 @@ if filereadable('/usr/local/opt/fzf/install')
 else
         Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 endif
-Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'rhysd/clever-f.vim'
 Plug 'johnsyweb/vim-makeshift'
 Plug 'qpkorr/vim-bufkill'
-Plug 'LucHermitte/lh-vim-lib' "dependency of local_vimrc
-Plug 'LucHermitte/local_vimrc'
 Plug 'xolox/vim-misc' "dependency of easytags
 Plug 'xolox/vim-easytags', { 'on': 'UpdateTags' }
 Plug 'bkad/CamelCaseMotion'
@@ -35,6 +30,12 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'mkitt/tabline.vim'
 Plug 'tpope/vim-abolish'
 Plug 'editorconfig/editorconfig-vim'
+" tool binding
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-fugitive'
+Plug 'tommcdo/vim-fubitive'
+Plug 'shumphrey/fugitive-gitlab.vim'
 " look
 Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
@@ -50,10 +51,18 @@ Plug 'plasticboy/vim-markdown'
 Plug 'rust-lang/rust.vim'
 Plug 'lervag/vimtex'
 Plug 'hail2u/vim-css3-syntax'
+Plug 'vim-scripts/MatlabFilesEdition'
+Plug 'daeyun/vim-matlab'
 Plug 'jwalton512/vim-blade'
 Plug 'lumiliet/vim-twig'
 Plug 'artoj/qmake-syntax-vim'
 Plug 'chr4/nginx.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'alisdair/vim-armasm'
+Plug 'cespare/vim-toml'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
 call plug#end()
 
 " Airline
