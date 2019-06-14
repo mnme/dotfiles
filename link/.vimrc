@@ -21,6 +21,7 @@ endif
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf.vim'
 Plug 'johnsyweb/vim-makeshift'
 Plug 'qpkorr/vim-bufkill'
 Plug 'xolox/vim-misc' "dependency of easytags
