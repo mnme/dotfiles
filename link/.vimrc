@@ -64,6 +64,7 @@ Plug 'alisdair/vim-armasm'
 Plug 'cespare/vim-toml'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
+Plug 'kergoth/vim-bitbake'
 call plug#end()
 
 " Airline
