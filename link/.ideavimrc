@@ -1,0 +1,20 @@
+set surround
+set commentary
+
+set clipboard=unnamed,unnamedplus
+                                " Use system clipboard as default
+
+set number                      " Line numbers for hybrid mode
+set relativenumber              " Relative numbers for hybrid mode
+
+set scrolloff=15                " Keep cursor away from this many chars top/bot
+set sidescrolloff=3             " Keep cursor away from this many chars left/right
+
+" split moving for the lazy with ctrl hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+map <space>c :action CloseActiveTab<CR>
+set ideajoin
