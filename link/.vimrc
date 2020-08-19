@@ -145,6 +145,9 @@ let g:easytags_events = ['BufWritePost']
 " CamelCaseMotion
 call camelcasemotion#CreateMotionMappings(',')
 
+" vim-bufkill
+let g:BufKillCreateMappings = 0
+
 " Section: Look {{{1
 "-------------------------------------------------------------------------
 
