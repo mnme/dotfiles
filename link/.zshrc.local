@@ -22,7 +22,7 @@ function dotfiles() {
 export MANWIDTH=${MANWIDTH:-80}
 
 # ctrl-s will no longer freeze the terminal.
-stty erase "^?"
+setopt noflowcontrol
 # warning if file exists ('cat /dev/null > ~/.zshrc')
 setopt NO_clobber
 
