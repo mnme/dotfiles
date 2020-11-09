@@ -28,14 +28,11 @@ setopt NO_clobber
 
 # git aliases
 alias ga='git add'
-alias gai='git add -i'
 alias gc='git commit -v'
-alias gcm='git commit -m'
-alias gco='git checkout'
 alias gd='git diff'
-alias gl='git pull'
+alias gl='git log'
 alias gst='git status'
-alias gp='git push'
+alias gsl='git stash list --pretty=format:"%C(dim bold magenta)%gd%C(reset) %<(70,trunc)%s %C(green)(%cr)"'
 
 # directory aliases
 setopt auto_pushd
