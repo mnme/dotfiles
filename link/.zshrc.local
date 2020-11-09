@@ -60,3 +60,5 @@ function gi() { curl -sLw "\n" https://www.gitignore.io/api/$@ ;}
 
 # Use ripgrep with fzf
 export FZF_DEFAULT_COMMAND='rg --files'
+
+export DOTNET_CLI_TELEMETRY_OPTOUT="true"
