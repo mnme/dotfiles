@@ -65,6 +65,7 @@ Plug 'cespare/vim-toml'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'kergoth/vim-bitbake'
+Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
 " Airline
