@@ -35,7 +35,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
-Plug 'tommcdo/vim-fubitive'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'christoomey/vim-tmux-navigator'
 " look
