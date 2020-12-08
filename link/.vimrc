@@ -178,6 +178,8 @@ set completeopt=menuone,menu,longest,preview
 set copyindent                  " Make autoindent use the same chars as prev line
 set cpoptions+=d
 set directory-=.                " Don't store temp files in cwd
+set diffopt+=algorithm:patience,indent-heuristic
+                                " Set modern diff algorithm
 set encoding=utf8               " UTF-8 by default
 set expandtab                   " No tabs
 set fileformats=unix,dos,mac
