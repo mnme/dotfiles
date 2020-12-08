@@ -37,6 +37,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
 Plug 'tommcdo/vim-fubitive'
 Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'christoomey/vim-tmux-navigator'
 " look
 Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
@@ -291,11 +292,6 @@ function! LineMotion(dir)
 endfunction
 nnoremap <silent> j :<c-u>call LineMotion("j")<cr>
 nnoremap <silent> k :<c-u>call LineMotion("k")<cr>
-" split moving for the lazy with ctrl hjkl
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 " split resizing with alt hjkl
 " http://stackoverflow.com/questions/16599867/vim-can-i-have-the-last-key-of-a-multi-key-binding-repeat-the-command
 "if has('unix')
