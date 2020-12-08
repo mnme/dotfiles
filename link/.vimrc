@@ -187,8 +187,8 @@ set fileformats=unix,dos,mac
 set fillchars=vert:\ ,stl:\ ,stlnc:\ ,fold:\ ,diff:┄
                                 " Unicode chars for diffs, and rely on
                                 " Colors for window borders
-silent! set foldmethod=marker
-                                " Use braces by default
+set foldmethod=syntax           " Folds defined by syntax highlighting
+set nofoldenable                " Disable folds by default
 set formatoptions=jtcqn1        " t - autowrap normal text
                                 " j - delete comment character when joining commented lines
                                 " c - autowrap comments
