@@ -11,6 +11,9 @@ function! BuildYCM(info)
   endif
 endfunction
 
+" Activate built-in man.vim plugin
+runtime! ftplugin/man.vim
+
 call plug#begin()
 " Check if fzf is already installed via homebrew
 if filereadable('/usr/local/opt/fzf/install')
@@ -67,6 +70,11 @@ Plug 'Quramy/tsuquyomi'
 Plug 'kergoth/vim-bitbake'
 Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
+
+" man.vim
+let g:ft_man_open_mode = 'vert'
+autocmd FileType man setlocal nolist
+set keywordprg=:Man
 
 " Airline
 if &encoding == 'utf-8'
