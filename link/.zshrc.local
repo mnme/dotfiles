@@ -32,7 +32,7 @@ alias gc='git commit -v'
 alias gd='git diff'
 alias gl='git log'
 alias gst='git status'
-alias gsl='git stash list --pretty=format:"%C(dim bold magenta)%gd%C(reset) %<(70,trunc)%s %C(green)(%cr)"'
+alias gsl='git stash list --pretty=format:"%C(dim bold magenta)%gd%C(reset) %<(70,trunc)%gs %C(green)(%cr)"'
 
 # directory aliases
 setopt auto_pushd
