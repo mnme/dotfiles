@@ -313,6 +313,12 @@ nnoremap <silent> k :<c-u>call LineMotion("k")<cr>
     "nnoremap <M-l> 5<C-w>>
 "endif
 
+" make easy naviagtion work in terminal mode, too
+tnoremap <silent> <C-h> <C-W>:TmuxNavigateLeft<cr>
+tnoremap <silent> <C-j> <C-W>:TmuxNavigateDown<cr>
+tnoremap <silent> <C-k> <C-W>:TmuxNavigateUp<cr>
+tnoremap <silent> <C-l> <C-W>:TmuxNavigateRight<cr>
+
 " Section: Indendation{{{1
 "--------------------------------------------------------------------------
 
