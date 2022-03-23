@@ -174,7 +174,6 @@ set autoread                    " Don't bother me when a file changes
 set autowrite                   " Write on :next/:prev/^Z
 set backspace=indent,eol,start
                                 " Allow backspace beyond insertion point
-set cindent                     " Automatic program indenting
 set cinkeys-=0#                 " Comments don't fiddle with indenting
 set cino=(0                     " Indent newlines after opening parenthesis
 set clipboard=unnamed,unnamedplus
