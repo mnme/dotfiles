@@ -1,18 +1,11 @@
 " Section: Plugin settings {{{1
 "--------------------------------------------------------------------------
 
-function! BuildYCM(info)
-  " info is a dictionary with 3 fields
-  " - name:   name of the plugin
-  " - status: 'installed', 'updated', or 'unchanged'
-  " - force:  set on PlugInstall! or PlugUpdate!
-  if a:info.status == 'installed' || a:info.force
-    !./install.py --clang-completer
-  endif
-endfunction
-
 " Activate built-in man.vim plugin
 runtime! ftplugin/man.vim
+
+" ALE
+let g:ale_completion_enabled = 1
 
 call plug#begin()
 " Check if fzf is already installed via homebrew
@@ -40,8 +33,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 " completion
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'dense-analysis/ale'
 " linting
 " syntax
 Plug 'cakebaker/scss-syntax.vim'
@@ -121,23 +113,6 @@ elseif has("unix")
         let g:vimtex_view_general_options_latexmk = '--unique'
     endif
 endif
-
-if !exists('g:ycm_semantic_triggers')
-    let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers.tex = [
-            \ 're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
-            \ 're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
-            \ 're!\\hyperref\[[^]]*',
-            \ 're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
-            \ 're!\\(include(only)?|input){[^}]*',
-            \ 're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
-            \ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
-            \ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
-            \ 're!\\usepackage(\s*\[[^]]*\])?\s*\{[^}]*',
-            \ 're!\\documentclass(\s*\[[^]]*\])?\s*\{[^}]*',
-            \ 're!\\[A-Za-z]*',
-            \ ]
 
 " easytags
 let g:easytags_async = 1
