@@ -23,14 +23,9 @@ else
 endif
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf.vim'
-Plug 'johnsyweb/vim-makeshift'
 Plug 'qpkorr/vim-bufkill'
-Plug 'xolox/vim-misc' "dependency of easytags
-Plug 'xolox/vim-easytags', { 'on': 'UpdateTags' }
 Plug 'bkad/CamelCaseMotion'
-Plug 'Chiel92/vim-autoformat'
 Plug 'mkitt/tabline.vim'
 Plug 'tpope/vim-abolish'
 Plug 'editorconfig/editorconfig-vim'
@@ -38,7 +33,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
-Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'christoomey/vim-tmux-navigator'
 " look
 Plug 'mhinz/vim-signify'
