@@ -146,7 +146,7 @@ let g:easytags_events = ['BufWritePost']
                             " InsertLeave, SessionLoadPost
 
 " CamelCaseMotion
-call camelcasemotion#CreateMotionMappings(',')
+let g:camelcasemotion_key = ','
 
 " vim-bufkill
 let g:BufKillCreateMappings = 0
