@@ -39,6 +39,16 @@ function assert() {
   ${modes[success]} "\"$actual\" ${equals[success]} \"$expected\""
 }
 
+# Test if the dotfiles script is currently
+function is_dotfiles_running() {
+  [[ "$DOTFILES_SCRIPT_RUNNING" ]] || return 1
+}
+
+# Test if this script was run via the "dotfiles" bin script (vs. via curl/wget)
+function is_dotfiles_bin() {
+  [[ "$(basename $0 2>/dev/null)" == dotfiles ]] || return 1
+}
+
 # OS detection
 function is_osx() {
   [[ "$OSTYPE" =~ ^darwin ]] || return 1
@@ -73,11 +83,11 @@ function prompt_menu() {
   exitcode=0
   if [[ "$2" ]]; then
     _prompt_menu_draws "$1"
-    read -t $2 -n 1 -sp "To edit this list, press any key within $2 seconds. "
+    read -t $2 -n 1 -sp "Press ENTER or wait $2 seconds to continue, or press any other key to edit."
     exitcode=$?
     echo ""
   fi 1>&2
-  if [[ "$exitcode" == 0 ]]; then
+  if [[ "$exitcode" == 0 && "$REPLY" ]]; then
     prompt="Toggle options (Separate options with spaces, ENTER when done): "
     while _prompt_menu_draws "$1" 1 && read -rp "$prompt" nums && [[ "$nums" ]]; do
       _prompt_menu_adds $nums
@@ -138,6 +148,12 @@ function _prompt_menu_add() {
 ###########################################
 # INTERNAL DOTFILES "INIT" VARS / FUNCTIONS
 ###########################################
+
+DOTFILES_SCRIPT_RUNNING=1
+function cleanup {
+  unset DOTFILES_SCRIPT_RUNNING
+}
+trap cleanup EXIT
 
 # Initialize.
 init_file=$DOTFILES/caches/init/selected
@@ -237,7 +253,14 @@ function do_stuff() {
 
 # Enough with the functions, let's do stuff.
 
-export prompt_delay=5
+# Set the prompt delay to be longer for the very first run.
+export prompt_delay=5; is_dotfiles_bin || prompt_delay=15
+
+# Keep-alive: update existing sudo time stamp if set, otherwise do nothing.
+# Note that this doesn't work with Homebrew, since brew explicitly invalidates
+# the sudo timestamp, which is probably wise.
+# See https://gist.github.com/cowboy/3118588
+while true; do sudo -n true; sleep 10; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Ensure that we can actually, like, compile anything.
 if [[ ! "$(type -P gcc)" ]] && is_osx; then
@@ -264,11 +287,10 @@ fi
 
 # Initialize.
 if [[ ! -d $DOTFILES ]]; then
-  # $DOTFILES directory doesn't exist? Clone it!
-  new_dotfiles_install=1
-  prompt_delay=15
+  # Dotfiles directory doesn't exist? Clone it!
   e_header "Downloading dotfiles"
-  git clone --recursive git://github.com/${github_user:-cowboy}/dotfiles.git $DOTFILES
+  git clone --branch ${DOTFILES_GH_BRANCH:-master} --recursive \
+    git://github.com/${DOTFILES_GH_USER:-cowboy}/dotfiles.git $DOTFILES
   cd $DOTFILES
 elif [[ "$1" != "restart" ]]; then
   # Make sure we have the latest files.
@@ -278,14 +300,18 @@ elif [[ "$1" != "restart" ]]; then
   git pull
   git submodule update --init --recursive --quiet
   if [[ "$(git rev-parse HEAD)" != "$prev_head" ]]; then
-    e_header "Changes detected, restarting script"
-    exec "$0" "restart"
+    if is_dotfiles_bin; then
+      e_header "Changes detected, restarting script"
+      exec "$0" restart
+    else
+      e_header "Changes detected, please re-run script"
+      exit
+    fi
   fi
 fi
 
 # Add binaries into the path
-[[ -d $DOTFILES/bin ]] && PATH=$DOTFILES/bin:$PATH
-export PATH
+[[ -d $DOTFILES/bin ]] && export PATH=$DOTFILES/bin:$PATH
 
 # Tweak file globbing.
 shopt -s dotglob
@@ -299,9 +325,9 @@ backup_dir="$DOTFILES/backups/$(date "+%Y_%m_%d-%H_%M_%S")/"
 backup=
 
 # Execute code for each file in these subdirectories.
-do_stuff "copy"
-do_stuff "link"
-do_stuff "init"
+do_stuff copy
+do_stuff link
+do_stuff init
 
 # Alert if backups were made.
 if [[ "$backup" ]]; then
