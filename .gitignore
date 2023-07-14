@@ -3,6 +3,7 @@
 /backups/
 
 # vim plugins
+/link/.vim/autoload/plug.vim.old
 /link/.vim/plugged/
 /link/.vim/.netrwhist
 
