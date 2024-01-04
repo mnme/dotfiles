@@ -31,7 +31,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'altercation/vim-colors-solarized'
+Plug 'arcticicestudio/nord-vim'
 " completion
 Plug 'dense-analysis/ale'
 " linting
@@ -133,8 +133,8 @@ let g:ale_rust_cargo_check_all_targets = 1
 "-------------------------------------------------------------------------
 
 syntax enable
-set background=light
-silent! colorscheme solarized
+set background=dark
+silent! colorscheme nord
 " Make matching parenthesis and cursor distinguishable
 hi MatchParen ctermbg=7
 
