@@ -126,6 +126,9 @@ let g:camelcasemotion_key = ','
 " vim-bufkill
 let g:BufKillCreateMappings = 0
 
+" ale
+let g:ale_rust_cargo_check_all_targets = 1
+
 " Section: Look {{{1
 "-------------------------------------------------------------------------
 
