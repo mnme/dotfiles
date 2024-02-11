@@ -129,6 +129,10 @@ let g:BufKillCreateMappings = 0
 " ale
 let g:ale_rust_cargo_check_all_targets = 1
 
+" sh.vim
+" Enable folding for functions (1), heredoc (2) and if/do/for (4)
+let g:sh_fold_enabled = 7
+
 " Section: Look {{{1
 "-------------------------------------------------------------------------
 
