@@ -34,6 +34,14 @@ alias gl='git log'
 alias gst='git status'
 alias gsl='git stash list --pretty=format:"%C(dim bold magenta)%gd%C(reset) %<(70,trunc)%gs %C(green)(%cr)"'
 
+# alt+s to execute the previous or current command as root
+sudo-command-line() {
+    [[ -z $BUFFER ]] && zle up-history
+    [[ $BUFFER != sudo\ * ]] && BUFFER="sudo ${BUFFER% }" && (( CURSOR += 5 ))
+}
+zle -N sudo-command-line
+bindkey "^[s" sudo-command-line
+
 # directory aliases
 setopt auto_pushd
 setopt pushd_ignore_dups
