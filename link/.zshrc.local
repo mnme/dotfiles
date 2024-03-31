@@ -42,6 +42,12 @@ sudo-command-line() {
 zle -N sudo-command-line
 bindkey "^[s" sudo-command-line
 
+# fish-like autosuggestions
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+ZSH_AUTOSUGGEST_MANUAL_REBIND=
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # directory aliases
 setopt auto_pushd
 setopt pushd_ignore_dups
