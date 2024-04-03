@@ -294,8 +294,11 @@ tnoremap <silent> <C-j> <C-W>:TmuxNavigateDown<cr>
 tnoremap <silent> <C-k> <C-W>:TmuxNavigateUp<cr>
 tnoremap <silent> <C-l> <C-W>:TmuxNavigateRight<cr>
 
-" Section: Indendation{{{1
+" Section: Autocommands{{{1
 "--------------------------------------------------------------------------
+
+" disable line numbers in terminal buffers
+au TerminalWinOpen * setlocal nonumber norelativenumber
 
 " 8 spaces
 autocmd FileType c setlocal shiftwidth=8 tabstop=8 softtabstop=8 expandtab
