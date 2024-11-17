@@ -1,4 +1,5 @@
 [general]
 import = [
-"~/.config/alacritty/themes/solarized_light.toml"
+"themes/solarized_light.toml",
+"local.toml"
 ]
