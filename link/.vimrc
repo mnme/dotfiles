@@ -39,7 +39,6 @@ Plug 'dense-analysis/ale'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'rust-lang/rust.vim'
-Plug 'lervag/vimtex'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'vim-scripts/MatlabFilesEdition'
 Plug 'daeyun/vim-matlab'
@@ -73,46 +72,6 @@ endif
 
 " vim-markdown
 let g:vim_markdown_math=1
-
-" vimtex
-let g:tex_flavor = "latex"
-let g:latex_latexmk_output = 'pdf'
-let g:vimtex_complete_close_braces = 1
-if has("win32")
-    let g:vimtex_view_general_viewer = 'SumatraPDF'
-    let g:vimtex_view_general_options = '-forward-search @tex @line @pdf'
-    let g:vimtex_view_general_options_latexmk = ''
-elseif has("unix")
-    if system('uname')=~'Darwin'
-        let g:vimtex_view_general_viewer
-                    \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
-        let g:vimtex_view_general_options = '-r @line @pdf @tex'
-
-        " This adds a callback hook that updates Skim after compilation
-        let g:vimtex_latexmk_callback_hooks = ['UpdateSkim']
-        function! UpdateSkim(status)
-            if !a:status | return | endif
-
-            let l:out = b:vimtex.out()
-            let l:tex = expand('%:p')
-            let l:cmd = [g:vimtex_view_general_viewer, '-r']
-            if !empty(system('pgrep Skim'))
-                call extend(l:cmd, ['-g'])
-            endif
-            if has('nvim')
-                call jobstart(l:cmd + [line('.'), l:out, l:tex])
-            elseif has('job')
-                call job_start(l:cmd + [line('.'), l:out, l:tex])
-            else
-                call system(join(l:cmd + [line('.'), shellescape(l:out), shellescape(l:tex)], ' '))
-            endif
-        endfunction
-    else
-        let g:vimtex_view_general_viewer = 'qpdfview'
-        let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
-        let g:vimtex_view_general_options_latexmk = '--unique'
-    endif
-endif
 
 " easytags
 let g:easytags_async = 1
