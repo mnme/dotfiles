@@ -32,6 +32,7 @@ Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
+Plug 'arcticicestudio/nord-vim'
 " completion
 Plug 'dense-analysis/ale'
 " linting
@@ -96,8 +97,10 @@ let g:sh_fold_enabled = 7
 "-------------------------------------------------------------------------
 
 syntax enable
-set background=light
-silent! colorscheme solarized
+"set background=light
+let g:nord_bold_vertical_split_line = 1
+let g:nord_uniform_diff_background = 1
+silent! colorscheme nord
 " Make matching parenthesis and cursor distinguishable
 hi MatchParen ctermbg=7
 

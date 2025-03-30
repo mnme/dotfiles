@@ -1,5 +1,5 @@
 [general]
 import = [
-"themes/solarized_light.toml",
-"local.toml"
+    "themes/nord_deep.toml",
+    "local.toml"
 ]
